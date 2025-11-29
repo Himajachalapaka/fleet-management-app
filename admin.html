@@ -11,8 +11,8 @@
             Fleet Management Admin
         </div>
         <div>
-        <select id="filter-category" placeholder="All category">
-            <option value="All"> All </option>
+        <select id="filter-category">
+            <option value="All"> All Category </option>
              <option value="Auto"> Auto </option>
               <option value="Car"> Car </option>
                <option value="Truck"> Truck </option>
@@ -21,7 +21,7 @@
         </select>
 
         <select id="filter-availability">
-            <option value="All"> All</option>
+            <option value="All"> All Availability </option>
             <option value="Available"> Available</option>
             <option value="unavailable"> unavailable</option>
         </select>
@@ -36,6 +36,7 @@
   <!---side bar--->
   <aside class="sidebar">
     <h2>Add Fleet</h2>
+    <form id="fleetForm">
     <input type = "text" placeholder="Regd no of vehile">
     <select id="category" placeholder="Select Category">
         <option value = "select"> Select category </option>
@@ -51,8 +52,24 @@
         <option value="unavailable">unavailable</option>
     </select>
     <button type="submit">Add Fleet</button>
-
+    </form>
   </aside>
+  <! -- Cards -- >
+  <section id="cardsContainer" class="cards-container">
+
+  </section>
 </main>
+
+
+<script>
+    const fleetForm = document.getElementById("fleetForm");
+    const cardsContainer= document.getElementById("cardsContainer");
+    const filterCategory = document.getElementById("filter-category");
+    const filterAvailability = document.getElementById("filter-availability");
+    const clearFilterBtn = document.getElementById("clearfilter-button");
+
+    const VEHICLE_IMAGE_SRC = "https://coding-platform.s3.amazonaws.com/dev/lms/tickets/5e80fcb6-3f8e-480c-945b-30a5359eb40e/JNmYjkVr3WOjsrbu.png"
+
+</script>
 </body>
 </html>
