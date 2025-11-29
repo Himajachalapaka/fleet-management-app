@@ -10,6 +10,7 @@
         <div class="navbar_title">
             Fleet Management Admin
         </div>
+        <div>
         <select id="filter-category" placeholder="All category">
             <option value="All"> All </option>
              <option value="Auto"> Auto </option>
@@ -19,10 +20,21 @@
 
         </select>
 
-        <select id="filter-availability"></select>
+        <select id="filter-availability">
+            <option value="All"> All</option>
+            <option value="Available"> Available</option>
+            <option value="unavailable"> unavailable</option>
+        </select>
+        <button id="clearfilter-button">
+            Clear Filter
+
+        </button>
+    </div>
     </header>
+    <main class="main-container">
+
   <!---side bar--->
-  <aside>
+  <aside class="sidebar">
     <h2>Add Fleet</h2>
     <input type = "text" placeholder="Regd no of vehile">
     <select id="category" placeholder="Select Category">
@@ -33,7 +45,14 @@
         <option value = "Bus"> Bus </option>
     </select>
     <input type = "text" placeholder="Driver name">
-  </aside>
+    <select id="Availability">
+        <option value="">---Select---</option>
+        <option value="Available">Available</option>
+        <option value="unavailable">unavailable</option>
+    </select>
+    <button type="submit">Add Fleet</button>
 
+  </aside>
+</main>
 </body>
 </html>
