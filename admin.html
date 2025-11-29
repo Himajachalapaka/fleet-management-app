@@ -114,9 +114,19 @@ function renderCards() {
         <h3>${vehicle.regNo}</h3>
         <p> <strong> Category: </strong>${vehicle.category}</p>
          <p> <strong> Driver: </strong>
+             <span class="driver-name">${vehicle.driverName}</span></p>
             <span class="card-buttons">
-                <button
-        
+                `;
+
+
+                const updateBtn = card.querySelector(".btn-update");
+                const toggleBtn = card.querySelector(".btn-toggle");
+        const deleteBtn = card.querySelector(".btn-delete");
+
+        updateBtn.addEventListener("click", function(){
+            const newName = prompt("Enter new driver name");
+            
+        }
 
     }
 }
