@@ -37,7 +37,7 @@
   <aside class="sidebar">
     <h2>Add Fleet</h2>
     <form id="fleetForm">
-    <input type = "text" placeholder="Regd no of vehile">
+    <input id="regNo" type = "text" placeholder="Regd no of vehile">
     <select id="category" placeholder="Select Category">
         <option value = "select"> Select category </option>
         <option value = "Auto"> Auto </option>
@@ -45,7 +45,7 @@
         <option value = "Truck"> Truck </option>
         <option value = "Bus"> Bus </option>
     </select>
-    <input type = "text" placeholder="Driver name">
+    <input id="driverName" type = "text" placeholder="Driver name">
     <select id="Availability">
         <option value="">---Select---</option>
         <option value="Available">Available</option>
@@ -69,7 +69,28 @@
     const clearFilterBtn = document.getElementById("clearfilter-button");
 
     const VEHICLE_IMAGE_SRC = "https://coding-platform.s3.amazonaws.com/dev/lms/tickets/5e80fcb6-3f8e-480c-945b-30a5359eb40e/JNmYjkVr3WOjsrbu.png"
+fleetForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const regNo = document.getElementById("regNo").value.trim();
+    const category = document.getElementById("category").value;
+    const driverName = document.getElementById("driverName").value.trim();
+    const availability = document.getElementById("availability").value;
 
+    if(!regNo || !category || !driverName || !availability){
+        alert("All fields are required");
+        return;
+    }
+    const newVehicle = {
+        id: Date.now(),
+        regNo:regNo,
+        category : category,
+        driverName: driverName,
+        isAvailable : availability === "Available"
+    };
+    vehicles.push(newVehicle);
+    fleetForm.reset();
+    renderCards();
+});
 </script>
 </body>
 </html>
