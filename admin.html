@@ -108,6 +108,16 @@ function renderCards() {
     filtered.forEach(function(vehicle){
         const card = document.createElement("div");
         card.className="fleet-card";
+        const availabilityText = vehicle.isAvailable ? "Available" : "Unavailable";
+        const statusClass= vehicle.isAvailable ? "status-available" : "status-unavailable";
+        card.innerHTML = ` <img src="${VEHICLE_IMAGE_SRC}" alt="vehicle-img">
+        <h3>${vehicle.regNo}</h3>
+        <p> <strong> Category: </strong>${vehicle.category}</p>
+         <p> <strong> Driver: </strong>
+            <span class="card-buttons">
+                <button
+        
+
     }
 }
 </script>
