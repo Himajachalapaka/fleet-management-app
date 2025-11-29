@@ -10,17 +10,28 @@
         Fleet Management Login Page
     </h2>
     <div>
-        <input type="email" placeholder="Enter the email" required> <br>
+        <input id="email" type="email" placeholder="Enter the email" required> <br>
         <br>
-        <input type="password" placeholder="Enter the password" required>
+        <input id="password" type="password" placeholder="Enter the password" required>
         <br><br>
-        <button>
+        <button id="loginButton">
             Login
         </button>
     </div>
     <script>
         const VALID_EMAIL = "admin@gmail.com"
         const VALID_PASSWORD = "admin1234"
+        document.getElementById("loginButton").addEventListener("click", function() {
+            const emailValue = document.getElementById("email").value.trim();
+            const passwordValue = document.getElementById("password").value.trim();
+            if (emailValue ===VALID_EMAIL && passwordValue === VALID_PASSWORD){
+                alert("Login success");
+                window.location.href = "admin.html";
+            }
+            else{
+                alert("Wrong email or password");
+            }
+        });
     </script>
 </body>
 </html>
