@@ -8,7 +8,7 @@
 <body>
     <header class="navbar">
         <div class="navbar_title">
-            Fleet Management Admin
+            <h2>Fleet Management Admin</h2>
         </div>
         <div>
         <select id="filter-category">
@@ -91,6 +91,25 @@ fleetForm.addEventListener("submit", function(event) {
     fleetForm.reset();
     renderCards();
 });
+function renderCards() {
+    cardsContainer.innerHTML="";
+    let filtered = vehicles.slice();
+    if(filterCategory.value!== "All"){
+        filtered = filtered.filter(function (v){
+            return v.category === filterCategory.value;
+    });
+    }
+    if(filter-availability.value !== "All"){
+        const shouldBeAvailable = filter-availability.value ==="Available";
+        filtered=filtered.filter(function(v){
+            return v.isAvailable === shouldBeAvailable;
+        });
+    }
+    filtered.forEach(function(vehicle){
+        const card = document.createElement("div");
+        card.className="fleet-card";
+    }
+}
 </script>
 </body>
 </html>
